@@ -26,6 +26,34 @@ class Prispevek
             return null;
     }
 
+    static public function zmenit($nadpis, $obsah)
+    {
+        $spojeni = DB::pripojit();
+
+        $dotaz = "UPDATE 3ep_sk2_php_mvc_prispevky SET obsah = '$obsah' WHERE nadpis = '$nadpis'";
+        $vysledek = mysqli_query($spojeni, $dotaz);
+
+        if($vysledek)
+            return new Prispevek(mysqli_insert_id($spojeni), $nadpis, $obsah);
+        else
+            return null;
+    }
+
+    static public function vymaz($nadpis)
+    {
+        $spojeni = DB::pripojit();
+
+        $dotaz = "DELETE FROM 3ep_sk2_php_mvc_prispevky WHERE nadpis = '$nadpis'";
+        $vysledek = mysqli_query($spojeni, $dotaz);
+
+        if($vysledek)
+            return new Prispevek(mysqli_insert_id($spojeni), $nadpis);
+        else
+            return null;
+    }
+
+
+
     static public function nacist($id)
     {
         $spojeni = DB::pripojit();

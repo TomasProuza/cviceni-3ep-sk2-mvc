@@ -31,6 +31,41 @@ class PrispevkyController
             return spustit("prispevky", "chyba");
     }
 
+
+
+    public function editovat()
+    {
+        $nadpis = trim($_POST["nadpis"]);
+        $obsah = trim($_POST["obsah"]);
+
+        $prispevek = Prispevek::zmenit($nadpis, $obsah);
+
+        if($prispevek)
+        {
+            $_GET["id"] = $prispevek->id;
+            return spustit("prispevky", "detail");
+        }
+        else
+            return spustit("prispevky", "chyba");
+    }
+
+    public function vymazati()
+    {
+        $nadpis = trim($_POST["nadpis"]);
+
+        $prispevek = Prispevek::vymaz($nadpis);
+
+        if($prispevek)
+        {
+            $_GET["id"] = $prispevek->id;
+            return spustit("prispevky", "detail");
+        }
+        else
+            return spustit("prispevky", "chyba");
+    }
+
+
+
     public function detail()
     {
         $id = $_GET["id"];
