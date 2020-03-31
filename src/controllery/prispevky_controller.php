@@ -6,6 +6,14 @@ class PrispevkyController
     {
         require_once "viewy/prispevky/pridani.php";
     }
+    public function edit()
+    {
+        require_once "viewy/prispevky/edit.php";
+    }
+    public function vymazat()
+    {
+        require_once "viewy/prispevky/vymazat.php";
+    }
 
     public function pridat()
     {

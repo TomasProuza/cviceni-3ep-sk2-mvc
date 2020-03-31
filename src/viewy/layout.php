@@ -13,6 +13,8 @@
     <header>
         <a href="?c=stranky&a=domu">Domů</a>&nbsp;
         <a href="?c=prispevky&a=pridani">Nový příspěvěk</a>&nbsp;
+        <a href="?c=prispevky&a=edit">Editovat příspěvěk</a>&nbsp;
+        <a href="?c=prispevky&a=vymazat">Vymazat příspěvěk</a>&nbsp;
         <a href="?c=prispevky&a=prehled">Přehled příspěvků</a>&nbsp;
     </header>
     <?php require_once "router.php"; ?>

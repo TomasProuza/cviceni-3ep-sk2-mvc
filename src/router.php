@@ -28,6 +28,8 @@ $controllery = array(
     "prispevky" => array(
         "pridat",
         "pridani",
+        "edit",
+        "vymazat",
         "detail",
         "chyba",
         "prehled",
